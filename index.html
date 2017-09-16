@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>VueJS</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+  <div id="AppVue">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <h2>Agregar una nueva tarea</h2>
+          <input type="text" class="form-control" >
+        </div>
+        <div class="col-sm-6">
+          <h2>Listado de tareas</h2>
+          <ul class="list-group">
+            <li class="list-group-item"
+              v-for="item in lists"
+              v-bind:class="item.completed == true ? 'disabled' : ''">
+              {{ item.keep }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+
+          <h2>Procesos</h2>
+          <hr>
+          <pre>
+            {{ $data | json }}
+          </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="vue.js"> </script>
+  <script src="script.js"></script>
+</body>
+</html>
